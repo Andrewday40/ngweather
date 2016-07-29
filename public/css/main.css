@@ -1,0 +1,13 @@
+body {
+  /*background-color: lightblue;*/
+}
+
+footer {
+  width: 100%;
+  bottom: 0;
+  position: fixed;
+}
+
+ul{
+  list-style-type: none;
+}

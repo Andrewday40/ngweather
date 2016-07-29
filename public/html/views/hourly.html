@@ -1,0 +1,50 @@
+
+<!-- <pre ng-if'!hourlyData'>
+  {{ hourlyData | json }}
+</pre> -->
+<div class='container'>
+  <div class='row'>
+    <div class="col-md-6 col-md-offset-3">
+      <h1>Latitude: {{hourlyData.latitude}}, Longitude: {{hourlyData.longitude}}</h1>
+    </div>
+  </div>
+  <div class="row" ng-repeat='card in hourlyData.hourly.data'>
+    <div class='col-md-6 col-md-offset-3 well'>
+      <div class="row">
+        <div class="col-md-4">
+          <img ng-src="images/{{card.icon}}.png" alt="{{card.icon}}" style='width: 50px;'>
+        </div>
+        <div class="col-md-4">
+          Temperature: {{card.temperature}}&deg;F
+        </div>
+        <div class="col-md-4">
+          {{card.time * 1000 | date:'short'}}
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-12">
+          Precipatation:{{card.precipProbability * 100 | number:0}}%
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-5">
+          Humidity: {{card.humidity * 100 | number:0}}%
+        </div>
+        <div class="col-md-7">
+          {{summaryLookup[card.summary] || card.summary}}
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-5">
+          Wind Speed: {{card.windSpeed}} mph
+        </div>
+        <div class="col-md-5">
+          Visibility: {{card.visibility}} miles
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
